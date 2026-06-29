@@ -1,6 +1,7 @@
 const root = document.documentElement;
 const progressBar = document.querySelector("#progress-bar");
 const themeToggle = document.querySelector("#theme-toggle");
+const siteNav = document.querySelector(".site-nav");
 
 function safeGet(key) {
   try {
@@ -54,6 +55,14 @@ function updateProgress() {
   progressBar.style.width = `${Math.min(100, Math.max(0, progress))}%`;
 }
 
+function updateNav() {
+  if (!siteNav) {
+    return;
+  }
+
+  siteNav.classList.toggle("scrolled", window.scrollY > 24);
+}
+
 setTheme(getInitialTheme());
 
 if (themeToggle) {
@@ -62,6 +71,11 @@ if (themeToggle) {
   });
 }
 
-window.addEventListener("scroll", updateProgress, { passive: true });
+window.addEventListener("scroll", () => {
+  updateProgress();
+  updateNav();
+}, { passive: true });
+
 window.addEventListener("resize", updateProgress);
 updateProgress();
+updateNav();

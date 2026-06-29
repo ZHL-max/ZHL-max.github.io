@@ -12,24 +12,26 @@
   <body>
     <div class="progress" aria-hidden="true"><span id="progress-bar"></span></div>
 
-    <header class="site-header">
-      <nav class="navbar" aria-label="主导航">
-        <a class="brand" href="./index.html" aria-label="返回首页">
-          <img src="./assets/site-mark.svg" alt="" width="36" height="36">
-          <strong>ZHL-max 的博客</strong>
-        </a>
-        <div class="nav-menu">
-          <a href="./agents-workflow.html">Agents 搭建工作流程</a>
-          <a class="active" href="./about.html">关于我</a>
-          <button class="theme-toggle" type="button" id="theme-toggle" aria-label="切换颜色主题" aria-pressed="false">夜间</button>
+    <header class="hero hero-compact" id="top">
+      <nav class="site-nav" aria-label="主导航">
+        <a class="brand" href="./index.html">ZHL-max 的博客</a>
+        <div class="nav-links">
+          <a href="./index.html">首页</a>
+          <a href="./archive.html">归档</a>
+          <button class="theme-toggle" type="button" id="theme-toggle" aria-label="切换日夜主题" aria-pressed="false">夜间</button>
         </div>
       </nav>
+
+      <div class="hero-mask">
+        <div class="hero-text fade-in-up">
+          <p>About</p>
+          <h1>关于我</h1>
+        </div>
+      </div>
     </header>
 
-    <main class="page-shell">
-      <article class="article">
-        <p class="eyebrow">About</p>
-        <h1>关于我</h1>
+    <main class="main-wrap">
+      <article class="board article-board" id="board">
         <p class="lead">我是人工智能专业的大学生。这个博客会用来记录学习过程、课程笔记、技术实验、项目复盘和一些日常思考。</p>
 
         <h2>当前学习方向</h2>
@@ -44,19 +46,19 @@
         <p>我希望这里不是只放最终答案，而是记录学习过程：为什么这么做、遇到了什么问题、怎么验证结果、还有哪些地方没理解清楚。</p>
 
         <h2>如何继续添加内容</h2>
-        <p>现在这个网站是多页面结构。首页的每个卡片都是一个链接，例如：</p>
-        <pre><code>&lt;a class="entry-card" href="./about.html"&gt;
-  &lt;h2&gt;关于我&lt;/h2&gt;
-&lt;/a&gt;</code></pre>
-        <p>以后新增章节时，只需要新建一个 HTML 页面，再在首页加一张卡片链接过去。</p>
+        <p>现在这个网站是静态多页面结构。首页的每一条记录都是一个链接，例如：</p>
+        <pre><code>&lt;article class="index-card"&gt;
+  &lt;h2&gt;&lt;a href="./about.html"&gt;关于我&lt;/a&gt;&lt;/h2&gt;
+&lt;/article&gt;</code></pre>
+        <p>以后新增章节时，新建一个 HTML 页面，再在首页和归档页分别加一条链接过去。</p>
 
-        <p class="page-actions"><a class="button" href="./index.html">返回首页</a></p>
+        <p class="page-actions"><a class="text-link" href="./index.html">返回首页</a></p>
       </article>
     </main>
 
     <footer class="footer">
-      <p>© 2026 ZHL-max.</p>
-      <a href="./agents-workflow.html">上一篇：Agents 搭建工作流程</a>
+      <p>© 2026 ZHL-max</p>
+      <a href="./archive.html">归档</a>
     </footer>
 
     <script src="./script.js"></script>

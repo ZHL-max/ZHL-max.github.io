@@ -4,55 +4,67 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>ZHL-max 的个人博客</title>
-    <meta name="description" content="ZHL-max 的 GitHub Pages 个人博客。">
+    <meta name="description" content="ZHL-max 的个人博客，记录人工智能学习、技术实践和大学日常。">
     <meta name="theme-color" content="#2f4154">
     <link rel="icon" href="./assets/site-mark.svg">
     <link rel="stylesheet" href="./styles.css">
   </head>
-  <body>
+  <body class="home-page">
     <div class="progress" aria-hidden="true"><span id="progress-bar"></span></div>
 
-    <header class="site-header">
-      <nav class="navbar" aria-label="主导航">
-        <a class="brand" href="./index.html" aria-label="返回首页">
-          <img src="./assets/site-mark.svg" alt="" width="36" height="36">
-          <strong>ZHL-max 的博客</strong>
-        </a>
-        <div class="nav-menu">
-          <a href="./agents-workflow.html">Agents 搭建工作流程</a>
-          <a href="./about.html">关于我</a>
-          <button class="theme-toggle" type="button" id="theme-toggle" aria-label="切换颜色主题" aria-pressed="false">夜间</button>
+    <header class="hero hero-home" id="top">
+      <nav class="site-nav" aria-label="主导航">
+        <a class="brand" href="./index.html">ZHL-max 的博客</a>
+        <div class="nav-links">
+          <a class="active" href="./index.html">首页</a>
+          <a href="./archive.html">归档</a>
+          <button class="theme-toggle" type="button" id="theme-toggle" aria-label="切换日夜主题" aria-pressed="false">夜间</button>
         </div>
       </nav>
+
+      <div class="hero-mask">
+        <div class="hero-text fade-in-up">
+          <p>AI Major · Study Notes · Campus Life</p>
+          <h1>ZHL-max 的小窝</h1>
+        </div>
+        <a class="scroll-down" href="#board" aria-label="滚动到内容">⌄</a>
+      </div>
     </header>
 
-    <main class="home-shell">
-      <section class="home-hero" aria-labelledby="home-title">
-        <p class="eyebrow">ZHL-max.github.io</p>
-        <h1 id="home-title">我的个人博客</h1>
-        <p>这里先保留两个核心章节。点击卡片会跳转到对应页面，以后添加新内容时也按这个方式扩展。</p>
-      </section>
+    <main class="main-wrap">
+      <section class="board" id="board" aria-label="博客内容">
+        <article class="index-card pinned">
+          <h2>
+            <span class="pin">置顶</span>
+            <a href="./agents-workflow.html">Agents 搭建工作流程</a>
+          </h2>
+          <a class="index-excerpt" href="./agents-workflow.html">
+            记录 planner、implementation、review 三个 agent 如何串起来，以及如何让上一步输出成为下一步输入。
+          </a>
+          <div class="post-metas">
+            <span>2026-06-30</span>
+            <span>项目记录</span>
+            <span>#Agents</span>
+          </div>
+        </article>
 
-      <section class="entry-grid" aria-label="博客章节">
-        <a class="entry-card" href="./agents-workflow.html">
-          <span class="entry-index">01</span>
-          <h2>Agents 搭建工作流程</h2>
-          <p>记录 planner、implementation、review 三个 agent 如何串起来，以及如何让上一步输出成为下一步输入。</p>
-          <strong>进入章节</strong>
-        </a>
-
-        <a class="entry-card" href="./about.html">
-          <span class="entry-index">02</span>
-          <h2>关于我</h2>
-          <p>介绍我的专业方向、学习计划、技术兴趣，以及这个博客后续会记录什么。</p>
-          <strong>进入章节</strong>
-        </a>
+        <article class="index-card">
+          <h2><a href="./about.html">关于我</a></h2>
+          <a class="index-excerpt" href="./about.html">
+            我是人工智能专业的大学生。这里会记录课程笔记、技术实验、项目复盘和一些日常思考。
+          </a>
+          <div class="post-metas">
+            <span>2026-06-30</span>
+            <span>个人介绍</span>
+            <span>#About</span>
+          </div>
+        </article>
       </section>
     </main>
 
     <footer class="footer">
-      <p>© 2026 ZHL-max. Built with GitHub Pages.</p>
-      <a href="./index.html">首页</a>
+      <p>© 2026 ZHL-max</p>
+      <a href="#top" aria-label="返回顶部">TOP</a>
     </footer>
 
     <script src="./script.js"></script>
