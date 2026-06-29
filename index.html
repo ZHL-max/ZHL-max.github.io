@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>ZHL-max 的个人博客</title>
-    <meta name="description" content="ZHL-max 的 GitHub Pages 个人博客，记录人工智能专业课程、技术项目、学习笔记和大学日常。">
+    <meta name="description" content="ZHL-max 的 GitHub Pages 个人博客。">
     <meta name="theme-color" content="#2f4154">
     <link rel="icon" href="./assets/site-mark.svg">
     <link rel="stylesheet" href="./styles.css">
@@ -12,162 +12,47 @@
   <body>
     <div class="progress" aria-hidden="true"><span id="progress-bar"></span></div>
 
-    <header class="hero" id="top">
+    <header class="site-header">
       <nav class="navbar" aria-label="主导航">
-        <a class="brand" href="#top" aria-label="ZHL-max 的个人博客首页">
+        <a class="brand" href="./index.html" aria-label="返回首页">
           <img src="./assets/site-mark.svg" alt="" width="36" height="36">
           <strong>ZHL-max 的博客</strong>
         </a>
-        <button class="nav-toggle" type="button" aria-label="展开导航菜单" aria-expanded="false" aria-controls="nav-menu">
-          <span></span><span></span><span></span>
-        </button>
-        <div class="nav-menu" id="nav-menu">
-          <a href="#posts">首页</a>
-          <a href="#archive">归档</a>
-          <a href="#categories">分类</a>
-          <a href="#tags">标签</a>
-          <a href="#about">关于</a>
+        <div class="nav-menu">
+          <a href="./agents-workflow.html">Agents 搭建工作流程</a>
+          <a href="./about.html">关于我</a>
           <button class="theme-toggle" type="button" id="theme-toggle" aria-label="切换颜色主题" aria-pressed="false">夜间</button>
         </div>
       </nav>
-
-      <section class="hero-center" aria-labelledby="site-title">
-        <p class="hero-kicker">AI Major · Study Notes · Campus Life</p>
-        <h1 id="site-title"><span>ZHL-max</span><span>的个人博客</span></h1>
-        <p class="subtitle" id="typing-text" data-text="记录课程、代码、项目和大学日常"></p>
-      </section>
-
-      <a class="scroll-cue" href="#posts" aria-label="滚动到文章列表">
-        <span></span>
-      </a>
     </header>
 
-    <main>
-      <section class="board" id="posts" aria-labelledby="posts-title">
-        <div class="section-head">
-          <p class="eyebrow">最新文章</p>
-          <h2 id="posts-title">学习和生活的近期记录</h2>
-          <p>这里会逐步放入我的人工智能专业课程笔记、技术实验、项目复盘和日常随笔。</p>
-        </div>
-
-        <div class="tool-row" role="search" aria-label="筛选文章">
-          <label class="search-box">
-            <span>搜索</span>
-            <input id="post-search" type="search" placeholder="搜索机器学习、Python、课程、日常">
-          </label>
-          <div class="filter-row" aria-label="按分类筛选">
-            <button class="filter active" type="button" data-filter="all" aria-pressed="true">全部</button>
-            <button class="filter" type="button" data-filter="notes" aria-pressed="false">笔记</button>
-            <button class="filter" type="button" data-filter="ai" aria-pressed="false">AI</button>
-            <button class="filter" type="button" data-filter="project" aria-pressed="false">项目</button>
-            <button class="filter" type="button" data-filter="daily" aria-pressed="false">日常</button>
-          </div>
-        </div>
-
-        <div class="post-list" id="post-list" aria-live="polite">
-          <article class="post-card pinned" data-category="notes" data-title="写在前面" data-summary="博客计划 AI 专业 大学 日常">
-            <div class="pin">置顶</div>
-            <a class="post-title" href="#about">写在前面：这个博客会写什么</a>
-            <p>这是我的个人博客入口。之后会用它记录课程复习、AI 学习路线、项目踩坑和大学生活。</p>
-            <footer>
-              <span>2026-06-30</span>
-              <span>关于博客</span>
-              <span>#计划</span>
-            </footer>
-          </article>
-
-          <article class="post-card" data-category="notes" data-title="线性代数复习路线" data-summary="矩阵 特征值 SVD 机器学习基础">
-            <a class="post-title" href="#archive">线性代数复习路线</a>
-            <p>把矩阵、特征值、正交分解和 SVD 跟机器学习里的模型直觉联系起来。</p>
-            <footer>
-              <span>2026-06-30</span>
-              <span>课程笔记</span>
-              <span>#线性代数</span>
-            </footer>
-          </article>
-
-          <article class="post-card" data-category="ai" data-title="神经网络训练最小闭环" data-summary="PyTorch loss dataloader training loop">
-            <a class="post-title" href="#archive">神经网络训练最小闭环</a>
-            <p>记录从数据读取、训练循环、loss 曲线到过拟合排查的一套基础流程。</p>
-            <footer>
-              <span>2026-06-30</span>
-              <span>AI 学习</span>
-              <span>#PyTorch</span>
-            </footer>
-          </article>
-
-          <article class="post-card" data-category="project" data-title="用 agents 搭建个人博客" data-summary="workflow agents GitHub Pages static site">
-            <a class="post-title" href="#archive">用 agents 搭建个人博客</a>
-            <p>用 planner、implementation、review 三阶段，把想法推进到一个能发布的 GitHub Pages 站点。</p>
-            <footer>
-              <span>2026-06-30</span>
-              <span>项目复盘</span>
-              <span>#GitHubPages</span>
-            </footer>
-          </article>
-
-          <article class="post-card" data-category="daily" data-title="一周学习节奏记录" data-summary="校园 日常 复盘 计划">
-            <a class="post-title" href="#archive">一周学习节奏记录</a>
-            <p>记录上课、实验、运动、碎片时间和复盘方式，给之后的自己留一点现场感。</p>
-            <footer>
-              <span>2026-06-30</span>
-              <span>大学日常</span>
-              <span>#复盘</span>
-            </footer>
-          </article>
-        </div>
-        <p class="empty" id="empty-state" hidden>没有匹配的文章，换个关键词试试。</p>
+    <main class="home-shell">
+      <section class="home-hero" aria-labelledby="home-title">
+        <p class="eyebrow">ZHL-max.github.io</p>
+        <h1 id="home-title">我的个人博客</h1>
+        <p>这里先保留两个核心章节。点击卡片会跳转到对应页面，以后添加新内容时也按这个方式扩展。</p>
       </section>
 
-      <section class="split-section" id="archive" aria-labelledby="archive-title">
-        <div>
-          <p class="eyebrow">Archive</p>
-          <h2 id="archive-title">归档计划</h2>
-        </div>
-        <p>正式写文章后，这里会按时间收纳学习笔记、项目日志和日常记录。当前页面先作为 GitHub Pages 主页和博客框架。</p>
-      </section>
+      <section class="entry-grid" aria-label="博客章节">
+        <a class="entry-card" href="./agents-workflow.html">
+          <span class="entry-index">01</span>
+          <h2>Agents 搭建工作流程</h2>
+          <p>记录 planner、implementation、review 三个 agent 如何串起来，以及如何让上一步输出成为下一步输入。</p>
+          <strong>进入章节</strong>
+        </a>
 
-      <section class="grid-section" id="categories" aria-labelledby="categories-title">
-        <div class="section-head">
-          <p class="eyebrow">Categories</p>
-          <h2 id="categories-title">分类</h2>
-        </div>
-        <div class="category-grid">
-          <a href="#posts"><span>笔记</span><small>课程复习、公式整理、错题记录</small></a>
-          <a href="#posts"><span>AI</span><small>机器学习、深度学习、实验复现</small></a>
-          <a href="#posts"><span>项目</span><small>代码实践、工具搭建、踩坑复盘</small></a>
-          <a href="#posts"><span>日常</span><small>大学生活、学习节奏、阶段总结</small></a>
-        </div>
-      </section>
-
-      <section class="grid-section" id="tags" aria-labelledby="tags-title">
-        <div class="section-head">
-          <p class="eyebrow">Tags</p>
-          <h2 id="tags-title">标签</h2>
-        </div>
-        <div class="tag-cloud">
-          <span>Python</span><span>PyTorch</span><span>机器学习</span><span>深度学习</span>
-          <span>线性代数</span><span>概率论</span><span>计算机视觉</span><span>GitHub Pages</span>
-        </div>
-      </section>
-
-      <section class="about" id="about" aria-labelledby="about-title">
-        <div>
-          <p class="eyebrow">About</p>
-          <h2 id="about-title">关于我</h2>
-          <p>我是人工智能专业的大学生。这个站点会用来记录学习路线、课程笔记、技术项目和一些真实的日常复盘。风格参考了常见 GitHub Pages / Hexo 博客：首页有首屏、导航、文章列表、分类和标签，但实现保持纯静态，方便直接部署。</p>
-        </div>
-        <ul class="about-list">
-          <li><strong>当前方向</strong><span>AI 基础、Python、深度学习、计算机视觉</span></li>
-          <li><strong>发布方式</strong><span>GitHub Pages 用户主页：ZHL-max.github.io</span></li>
-          <li><strong>写作目标</strong><span>把学习过程写清楚，而不是只保存结果</span></li>
-        </ul>
+        <a class="entry-card" href="./about.html">
+          <span class="entry-index">02</span>
+          <h2>关于我</h2>
+          <p>介绍我的专业方向、学习计划、技术兴趣，以及这个博客后续会记录什么。</p>
+          <strong>进入章节</strong>
+        </a>
       </section>
     </main>
 
     <footer class="footer">
-      <p>© 2026 ZHL-max. Built with static HTML, CSS, and JavaScript.</p>
-      <a href="#top">回到顶部</a>
+      <p>© 2026 ZHL-max. Built with GitHub Pages.</p>
+      <a href="./index.html">首页</a>
     </footer>
 
     <script src="./script.js"></script>

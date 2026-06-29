@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>关于我 - ZHL-max 的博客</title>
+    <meta name="description" content="ZHL-max 的个人介绍。">
+    <meta name="theme-color" content="#2f4154">
+    <link rel="icon" href="./assets/site-mark.svg">
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <div class="progress" aria-hidden="true"><span id="progress-bar"></span></div>
+
+    <header class="site-header">
+      <nav class="navbar" aria-label="主导航">
+        <a class="brand" href="./index.html" aria-label="返回首页">
+          <img src="./assets/site-mark.svg" alt="" width="36" height="36">
+          <strong>ZHL-max 的博客</strong>
+        </a>
+        <div class="nav-menu">
+          <a href="./agents-workflow.html">Agents 搭建工作流程</a>
+          <a class="active" href="./about.html">关于我</a>
+          <button class="theme-toggle" type="button" id="theme-toggle" aria-label="切换颜色主题" aria-pressed="false">夜间</button>
+        </div>
+      </nav>
+    </header>
+
+    <main class="page-shell">
+      <article class="article">
+        <p class="eyebrow">About</p>
+        <h1>关于我</h1>
+        <p class="lead">我是人工智能专业的大学生。这个博客会用来记录学习过程、课程笔记、技术实验、项目复盘和一些日常思考。</p>
+
+        <h2>当前学习方向</h2>
+        <ul>
+          <li>人工智能基础：机器学习、深度学习、模型训练。</li>
+          <li>编程实践：Python、PyTorch、数据处理和工程化工具。</li>
+          <li>数学基础：线性代数、概率论、优化方法。</li>
+          <li>项目记录：把课堂知识转成可以运行、可以复盘的小项目。</li>
+        </ul>
+
+        <h2>这个博客会写什么</h2>
+        <p>我希望这里不是只放最终答案，而是记录学习过程：为什么这么做、遇到了什么问题、怎么验证结果、还有哪些地方没理解清楚。</p>
+
+        <h2>如何继续添加内容</h2>
+        <p>现在这个网站是多页面结构。首页的每个卡片都是一个链接，例如：</p>
+        <pre><code>&lt;a class="entry-card" href="./about.html"&gt;
+  &lt;h2&gt;关于我&lt;/h2&gt;
+&lt;/a&gt;</code></pre>
+        <p>以后新增章节时，只需要新建一个 HTML 页面，再在首页加一张卡片链接过去。</p>
+
+        <p class="page-actions"><a class="button" href="./index.html">返回首页</a></p>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <p>© 2026 ZHL-max.</p>
+      <a href="./agents-workflow.html">上一篇：Agents 搭建工作流程</a>
+    </footer>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
