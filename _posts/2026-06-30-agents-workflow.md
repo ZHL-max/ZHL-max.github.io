@@ -1,7 +1,7 @@
 ---
 title: "Agents-workflow"
 date: 2026-06-30 09:00:00 +0800
-categories: [AI]
+categories: [AI笔记]
 tags: [workflow]
 description: "记录 planner、implementation、review 三个 agent 协作完成任务的工作流程。"
 permalink: /agents-workflow.html
@@ -34,10 +34,3 @@ runs/blog-sherlock-holmes/
 ```
 
 其中 `02-implementation-prompt.md` 从 planner 输出中抽取，`04-review-input.md` 再合并 planner 输出、implementation prompt 和 implementation report。这样前一个 agent 的内容就能稳定传给下一个 agent。
-
-## 后续想记录的内容
-
-- 每个 agent 的职责怎么写清楚。
-- 怎么设计输入和输出模板。
-- 如何验证一个 workflow 是否真的跑通。
-- 哪些地方适合自动化，哪些地方应该保留人工判断。
