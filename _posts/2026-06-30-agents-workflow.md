@@ -7,7 +7,6 @@ description: "记录 planner、implementation、review 三个 agent 协作完成
 permalink: /agents-workflow.html
 hero_class: hero-index
 hero_title: "Agents-workflow"
-subtitle: "Workflow"
 ---
 
 这个章节用来记录我如何把三个 agent 串成一个完整流程：规划、实现、复核。核心思想是每个阶段都产生明确的 Markdown 产物，下一个阶段直接读取上一个阶段的输出。
