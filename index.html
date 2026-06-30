@@ -12,6 +12,7 @@ scroll_down: true
 ---
 
 <section class="board" id="board" aria-label="博客内容">
+
   {% for post in site.posts %}
     {% if post.pin %}
     <article class="index-card{% if post.pin %} pinned{% endif %}">
@@ -56,4 +57,5 @@ scroll_down: true
     </article>
     {% endunless %}
   {% endfor %}
+
 </section>
