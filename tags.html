@@ -1,69 +1,33 @@
-<!doctype html>
-<html lang="zh-CN">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>标签 - sherlock's blog</title>
-    <meta name="description" content="sherlock 的博客标签。">
-    <meta name="theme-color" content="#2f4154">
-    <link rel="icon" href="./assets/site-mark.svg">
-    <link rel="stylesheet" href="./styles.css">
-  </head>
-  <body>
-    <div class="progress" aria-hidden="true"><span id="progress-bar"></span></div>
+---
+layout: default
+title: "标签"
+description: "sherlock 的博客标签。"
+nav: tags
+hero_home: true
+hero_class: hero-tags tags-hero
+hero_title: "标签"
+scroll_down: true
+---
 
-    <header class="hero hero-compact hero-tags" id="top">
-      <nav class="site-nav" aria-label="主导航">
-        <a class="brand" href="./index.html">sherlock's blog</a>
-        <div class="nav-links">
-          <a href="./index.html">首页</a>
-          <a href="./archive.html">归档</a>
-          <a href="./categories.html">分类</a>
-          <a class="active" href="./tags.html">标签</a>
-          <button class="theme-toggle" type="button" id="theme-toggle" aria-label="切换日夜主题" aria-pressed="false">夜间</button>
-        </div>
-      </nav>
+<section class="board tag-cloud-board" id="board" aria-label="标签云">
+  {% assign sorted_tags = site.tags | sort %}
+  {% for tag in sorted_tags %}
+    {% assign tag_name = tag[0] %}
+    {% assign tag_size = tag[1] | size %}
+    {% assign style_index = forloop.index0 | modulo: 4 %}
+    <a class="tag {% if tag_size > 1 %}tag-xl{% elsif style_index == 0 %}tag-xl{% elsif style_index == 1 %}tag-lg{% elsif style_index == 2 %}tag-md{% else %}tag-sm{% endif %} {% if style_index == 0 %}tag-blue{% elsif style_index == 1 %}tag-indigo{% elsif style_index == 2 %}tag-soft{% else %}tag-muted{% endif %}" href="{{ '/tags.html' | relative_url }}#{{ tag_name | slugify }}">{{ tag_name }}</a>
+  {% endfor %}
+</section>
 
-      <div class="hero-mask">
-        <div class="hero-text fade-in-up">
-          <h1>标签</h1>
-        </div>
-      </div>
-    </header>
-
-    <main class="main-wrap">
-      <section class="board taxonomy-board" id="board" aria-labelledby="tags-title">
-        <p class="archive-count" id="tags-title">共计 2 个标签</p>
-        <hr>
-
-        <div class="tag-cloud">
-          <a href="#workflow">#workflow</a>
-          <a href="#self-introduction">#self-Introduction</a>
-        </div>
-
-        <section class="taxonomy-section" id="workflow">
-          <h2>#workflow <span>1 篇</span></h2>
-          <a class="taxonomy-item" href="./agents-workflow.html">
-            <span>Agents-workflow</span>
-            <small>2026-06-30 · AI</small>
-          </a>
-        </section>
-
-        <section class="taxonomy-section" id="self-introduction">
-          <h2>#self-Introduction <span>1 篇</span></h2>
-          <a class="taxonomy-item" href="./about.html">
-            <span>About me</span>
-            <small>2026-06-30 · 个人</small>
-          </a>
-        </section>
-      </section>
-    </main>
-
-    <footer class="footer">
-      <p>© 2026 sherlock</p>
-      <a href="./index.html">首页</a>
-    </footer>
-
-    <script src="./script.js"></script>
-  </body>
-</html>
+<section class="board tag-result-board" aria-label="标签文章">
+  {% for tag in sorted_tags %}
+    {% assign tag_name = tag[0] %}
+    {% assign tag_posts = tag[1] %}
+    <article class="tag-result" id="{{ tag_name | slugify }}">
+      <h2>#{{ tag_name }}</h2>
+      {% for post in tag_posts %}
+        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+      {% endfor %}
+    </article>
+  {% endfor %}
+</section>

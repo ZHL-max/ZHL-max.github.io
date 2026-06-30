@@ -1,76 +1,59 @@
-<!doctype html>
-<html lang="zh-CN">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>sherlock's blog</title>
-    <meta name="description" content="sherlock 的个人博客，随机更新内容。">
-    <meta name="theme-color" content="#2f4154">
-    <link rel="icon" href="./assets/site-mark.svg">
-    <link rel="stylesheet" href="./styles.css">
-  </head>
-  <body class="home-page">
-    <div class="progress" aria-hidden="true"><span id="progress-bar"></span></div>
+---
+layout: default
+title: "sherlock's blog"
+description: "sherlock 的个人博客，随机更新内容。"
+nav: home
+body_class: home-page
+hero_home: true
+hero_class: hero-index
+hero_title: "sherlock's home"
+subtitle: "AI · Study"
+scroll_down: true
+---
 
-    <header class="hero hero-home hero-index" id="top">
-      <nav class="site-nav" aria-label="主导航">
-        <a class="brand" href="./index.html">sherlock's blog</a>
-        <div class="nav-links">
-          <a class="active" href="./index.html">首页</a>
-          <a href="./archive.html">归档</a>
-          <a href="./categories.html">分类</a>
-          <a href="./tags.html">标签</a>
-          <button class="theme-toggle" type="button" id="theme-toggle" aria-label="切换日夜主题" aria-pressed="false">夜间</button>
-        </div>
-      </nav>
-
-      <div class="hero-mask">
-        <div class="hero-text fade-in-up">
-          <p>AI · Study Notes</p>
-          <h1>sherlock's home</h1>
-        </div>
-        <a class="scroll-down" href="#board" aria-label="滚动到内容">⌄</a>
+<section class="board" id="board" aria-label="博客内容">
+  {% for post in site.posts %}
+    {% if post.pin %}
+    <article class="index-card{% if post.pin %} pinned{% endif %}">
+      <h2>
+        {% if post.pin %}<span class="pin">pin</span>{% endif %}
+        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+      </h2>
+      <a class="index-excerpt" href="{{ post.url | relative_url }}">
+        {{ post.description | default: post.excerpt | strip_html | truncate: 100 }}
+      </a>
+      <div class="post-metas">
+        <span>{{ post.date | date: "%Y-%m-%d" }}</span>
+        {% for category in post.categories %}
+          <a href="{{ '/categories.html' | relative_url }}#{{ category | slugify }}">{{ category }}</a>
+        {% endfor %}
+        {% for tag in post.tags %}
+          <a href="{{ '/tags.html' | relative_url }}#{{ tag | slugify }}">#{{ tag }}</a>
+        {% endfor %}
       </div>
-    </header>
+    </article>
+    {% endif %}
+  {% endfor %}
 
-    <main class="main-wrap">
-      <section class="board" id="board" aria-label="博客内容">
-        <article class="index-card">
-          <h2>
-            <a href="./agents-workflow.html">Agents-workflow</a>
-          </h2>
-          <a class="index-excerpt" href="./agents-workflow.html">
-            记录 planner、implementation、review 三个 agent 协作完成任务的工作流程。
-          </a>
-          <div class="post-metas">
-            <span>2026-06-30</span>
-            <a href="./categories.html#ai">AI</a>
-            <a href="./tags.html#workflow">#workflow</a>
-          </div>
-        </article>
-
-        <article class="index-card pinned">
-          <h2>
-            <span class="pin">pin</span>
-            <a href="./about.html">About me</a>
-          </h2>
-          <a class="index-excerpt" href="./about.html">
-            这是我的个人博客，我会在闲暇时间记录我的日常学习内容、课程笔记以及一些日常思考。
-          </a>
-          <div class="post-metas">
-            <span>2026-06-30</span>
-            <a href="./categories.html#personal">个人</a>
-            <a href="./tags.html#self-introduction">#self-Introduction</a>
-          </div>
-        </article>
-      </section>
-    </main>
-
-    <footer class="footer">
-      <p>© 2026 sherlock</p>
-      <a href="#top" aria-label="返回顶部">TOP</a>
-    </footer>
-
-    <script src="./script.js"></script>
-  </body>
-</html>
+  {% for post in site.posts %}
+    {% unless post.pin %}
+    <article class="index-card">
+      <h2>
+        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+      </h2>
+      <a class="index-excerpt" href="{{ post.url | relative_url }}">
+        {{ post.description | default: post.excerpt | strip_html | truncate: 100 }}
+      </a>
+      <div class="post-metas">
+        <span>{{ post.date | date: "%Y-%m-%d" }}</span>
+        {% for category in post.categories %}
+          <a href="{{ '/categories.html' | relative_url }}#{{ category | slugify }}">{{ category }}</a>
+        {% endfor %}
+        {% for tag in post.tags %}
+          <a href="{{ '/tags.html' | relative_url }}#{{ tag | slugify }}">#{{ tag }}</a>
+        {% endfor %}
+      </div>
+    </article>
+    {% endunless %}
+  {% endfor %}
+</section>

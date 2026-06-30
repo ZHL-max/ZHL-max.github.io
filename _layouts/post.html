@@ -1,0 +1,19 @@
+---
+layout: default
+---
+
+<article class="board article-board" id="board">
+  <div class="post-metas post-page-metas">
+    <span>{{ page.date | date: "%Y-%m-%d" }}</span>
+    {% for category in page.categories %}
+      <a href="{{ '/categories.html' | relative_url }}#{{ category | slugify }}">{{ category }}</a>
+    {% endfor %}
+    {% for tag in page.tags %}
+      <a href="{{ '/tags.html' | relative_url }}#{{ tag | slugify }}">#{{ tag }}</a>
+    {% endfor %}
+  </div>
+
+  {{ content }}
+
+  <p class="page-actions"><a class="text-link" href="{{ '/' | relative_url }}">返回首页</a></p>
+</article>

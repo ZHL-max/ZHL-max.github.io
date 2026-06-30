@@ -2,6 +2,7 @@ const root = document.documentElement;
 const progressBar = document.querySelector("#progress-bar");
 const themeToggle = document.querySelector("#theme-toggle");
 const siteNav = document.querySelector(".site-nav");
+const categoryToggles = Array.from(document.querySelectorAll(".category-toggle"));
 
 function safeGet(key) {
   try {
@@ -38,10 +39,6 @@ function getInitialTheme() {
     return savedTheme;
   }
 
-  if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
-    return "dark";
-  }
-
   return "light";
 }
 
@@ -70,6 +67,24 @@ if (themeToggle) {
     setTheme(root.dataset.theme === "dark" ? "light" : "dark");
   });
 }
+
+categoryToggles.forEach((button) => {
+  button.addEventListener("click", () => {
+    const group = button.closest(".category-group");
+    if (!group) {
+      return;
+    }
+
+    const expanded = !group.classList.contains("expanded");
+    group.classList.toggle("expanded", expanded);
+    button.setAttribute("aria-expanded", String(expanded));
+
+    const icon = button.querySelector("span");
+    if (icon) {
+      icon.textContent = expanded ? "⌄" : "›";
+    }
+  });
+});
 
 window.addEventListener("scroll", () => {
   updateProgress();

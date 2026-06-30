@@ -1,0 +1,13 @@
+title: "sherlock's blog"
+description: "sherlock 的个人博客，随机更新内容。"
+timezone: Asia/Shanghai
+markdown: kramdown
+permalink: /:title.html
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      hero_class: hero-index

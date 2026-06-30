@@ -471,6 +471,204 @@ button {
   background: var(--board);
 }
 
+.category-directory {
+  max-width: 1040px;
+  min-height: 30rem;
+  padding: clamp(2.2rem, 6vw, 4.2rem) clamp(1.5rem, 8vw, 7rem);
+}
+
+.category-group {
+  scroll-margin-top: 5rem;
+  padding: 1.25rem 0 1.65rem;
+}
+
+.category-group + .category-group {
+  border-top: 1px solid transparent;
+}
+
+.category-group:target {
+  border-radius: var(--radius);
+  background: var(--accent-soft);
+}
+
+.category-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.category-heading h2 {
+  margin: 0;
+  color: var(--text);
+  font-size: clamp(1.45rem, 3vw, 1.85rem);
+  line-height: 1.25;
+}
+
+.category-toggle {
+  border: 0;
+  padding: 0;
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+  font-size: inherit;
+  font-weight: 800;
+  line-height: inherit;
+}
+
+.category-toggle:hover {
+  color: var(--accent);
+}
+
+.category-toggle span {
+  color: var(--muted);
+  font-size: 1.15rem;
+}
+
+.category-count {
+  color: var(--muted);
+  font-size: 1rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.category-count:hover {
+  color: var(--accent);
+}
+
+.category-posts {
+  display: grid;
+  gap: 1.05rem;
+  margin: 1.35rem 0 0 1.55rem;
+  padding: 0;
+  list-style: none;
+}
+
+.category-group:not(.expanded) .category-posts {
+  display: none;
+}
+
+.category-posts a {
+  color: var(--muted);
+  font-size: 1.02rem;
+  text-decoration: none;
+}
+
+.category-posts a:hover {
+  color: var(--accent);
+}
+
+.tag-cloud-board {
+  max-width: 1040px;
+  margin-top: -8.9rem;
+  min-height: 10.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1.1rem 1.5rem;
+  padding: clamp(1.4rem, 3vw, 2.4rem);
+}
+
+.tag-cloud-board .tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.4rem;
+  padding: 0.15rem 0.3rem;
+  border-radius: 0;
+  background: transparent;
+  font-weight: 500;
+  line-height: 1.1;
+  text-decoration: none;
+  transition: color 160ms ease, transform 160ms ease;
+}
+
+.tag-cloud-board .tag:hover {
+  transform: translateY(-2px);
+}
+
+.tag-xl {
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+}
+
+.tag-lg {
+  font-size: clamp(1.35rem, 3vw, 2rem);
+}
+
+.tag-md {
+  font-size: clamp(1.05rem, 2.4vw, 1.45rem);
+}
+
+.tag-sm {
+  font-size: clamp(0.9rem, 2vw, 1.12rem);
+}
+
+.tag-blue {
+  color: #2f80ed;
+}
+
+.tag-indigo {
+  color: #7b93d8;
+}
+
+.tag-soft {
+  color: #9caee8;
+}
+
+.tag-muted {
+  color: #b5c0ee;
+}
+
+[data-theme="dark"] .tag-blue {
+  color: #8ec5ff;
+}
+
+[data-theme="dark"] .tag-indigo {
+  color: #a9b8ff;
+}
+
+[data-theme="dark"] .tag-soft,
+[data-theme="dark"] .tag-muted {
+  color: #c7d2fe;
+}
+
+.tag-result-board {
+  max-width: 1040px;
+  margin-top: 1.5rem;
+}
+
+.tag-result {
+  scroll-margin-top: 5rem;
+  padding: 1.1rem 0;
+  border-top: 1px solid var(--line);
+}
+
+.tag-result:first-child {
+  border-top: 0;
+}
+
+.tag-result:target {
+  margin-inline: -0.6rem;
+  padding-inline: 0.6rem;
+  border-radius: var(--radius);
+  background: var(--accent-soft);
+}
+
+.tag-result h2 {
+  margin: 0 0 0.45rem;
+  font-size: 1.25rem;
+}
+
+.tag-result a {
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.tag-result a:hover {
+  color: var(--accent);
+}
+
 .article-board {
   max-width: 900px;
 }
@@ -562,6 +760,10 @@ code {
 }
 
 @media (max-width: 720px) {
+  .tags-hero {
+    min-height: 78vh;
+  }
+
   .site-nav {
     min-height: auto;
     align-items: flex-start;
@@ -614,6 +816,37 @@ code {
 
   .archive-item {
     grid-template-columns: 4.2rem minmax(0, 1fr);
+  }
+
+  .category-directory {
+    padding: 1.35rem;
+  }
+
+  .category-heading {
+    gap: 1rem;
+  }
+
+  .category-posts {
+    margin-left: 0.2rem;
+  }
+
+  .tag-cloud-board {
+    min-height: 11rem;
+    justify-content: center;
+    gap: 0.8rem 1.2rem;
+    padding: 1.4rem;
+  }
+
+  .tag-cloud-board .tag {
+    min-height: 2rem;
+  }
+
+  .tag-xl {
+    font-size: 1.55rem;
+  }
+
+  .tag-lg {
+    font-size: 1.1rem;
   }
 
   .footer {

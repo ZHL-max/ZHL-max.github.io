@@ -1,64 +1,27 @@
-<!doctype html>
-<html lang="zh-CN">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>分类 - sherlock's blog</title>
-    <meta name="description" content="sherlock 的博客分类。">
-    <meta name="theme-color" content="#2f4154">
-    <link rel="icon" href="./assets/site-mark.svg">
-    <link rel="stylesheet" href="./styles.css">
-  </head>
-  <body>
-    <div class="progress" aria-hidden="true"><span id="progress-bar"></span></div>
+---
+layout: default
+title: "分类"
+description: "sherlock 的博客分类。"
+nav: categories
+hero_class: hero-categories
+hero_title: "分类"
+---
 
-    <header class="hero hero-compact hero-categories" id="top">
-      <nav class="site-nav" aria-label="主导航">
-        <a class="brand" href="./index.html">sherlock's blog</a>
-        <div class="nav-links">
-          <a href="./index.html">首页</a>
-          <a href="./archive.html">归档</a>
-          <a class="active" href="./categories.html">分类</a>
-          <a href="./tags.html">标签</a>
-          <button class="theme-toggle" type="button" id="theme-toggle" aria-label="切换日夜主题" aria-pressed="false">夜间</button>
-        </div>
-      </nav>
-
-      <div class="hero-mask">
-        <div class="hero-text fade-in-up">
-          <h1>分类</h1>
-        </div>
+<section class="board category-directory" id="board" aria-label="分类目录">
+  {% assign sorted_categories = site.categories | sort %}
+  {% for category in sorted_categories %}
+    {% assign category_name = category[0] %}
+    {% assign category_posts = category[1] %}
+    <article class="category-group expanded" id="{{ category_name | slugify }}">
+      <div class="category-heading">
+        <h2><button class="category-toggle" type="button" aria-expanded="true">{{ category_name }} <span aria-hidden="true">⌄</span></button></h2>
+        <a class="category-count" href="{{ '/categories.html' | relative_url }}#{{ category_name | slugify }}" aria-label="{{ category_name }} 分类共有 {{ category_posts | size }} 篇文章">▣ {{ category_posts | size }}</a>
       </div>
-    </header>
-
-    <main class="main-wrap">
-      <section class="board taxonomy-board" id="board" aria-labelledby="categories-title">
-        <p class="archive-count" id="categories-title">共计 2 个分类</p>
-        <hr>
-
-        <section class="taxonomy-section" id="ai">
-          <h2>AI <span>1 篇</span></h2>
-          <a class="taxonomy-item" href="./agents-workflow.html">
-            <span>Agents-workflow</span>
-            <small>2026-06-30 · #workflow</small>
-          </a>
-        </section>
-
-        <section class="taxonomy-section" id="personal">
-          <h2>个人 <span>1 篇</span></h2>
-          <a class="taxonomy-item" href="./about.html">
-            <span>About me</span>
-            <small>2026-06-30 · #self-Introduction</small>
-          </a>
-        </section>
-      </section>
-    </main>
-
-    <footer class="footer">
-      <p>© 2026 sherlock</p>
-      <a href="./index.html">首页</a>
-    </footer>
-
-    <script src="./script.js"></script>
-  </body>
-</html>
+      <ul class="category-posts">
+        {% for post in category_posts %}
+          <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+        {% endfor %}
+      </ul>
+    </article>
+  {% endfor %}
+</section>
