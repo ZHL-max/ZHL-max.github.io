@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>归档 - sherlock's blog</title>
-    <meta name="description" content="sherlock 的博客归档。">
+    <title>分类 - sherlock's blog</title>
+    <meta name="description" content="sherlock 的博客分类。">
     <meta name="theme-color" content="#2f4154">
     <link rel="icon" href="./assets/site-mark.svg">
     <link rel="stylesheet" href="./styles.css">
@@ -12,13 +12,13 @@
   <body>
     <div class="progress" aria-hidden="true"><span id="progress-bar"></span></div>
 
-    <header class="hero hero-compact hero-archive" id="top">
+    <header class="hero hero-compact hero-categories" id="top">
       <nav class="site-nav" aria-label="主导航">
         <a class="brand" href="./index.html">sherlock's blog</a>
         <div class="nav-links">
           <a href="./index.html">首页</a>
-          <a class="active" href="./archive.html">归档</a>
-          <a href="./categories.html">分类</a>
+          <a href="./archive.html">归档</a>
+          <a class="active" href="./categories.html">分类</a>
           <a href="./tags.html">标签</a>
           <button class="theme-toggle" type="button" id="theme-toggle" aria-label="切换日夜主题" aria-pressed="false">夜间</button>
         </div>
@@ -26,26 +26,31 @@
 
       <div class="hero-mask">
         <div class="hero-text fade-in-up">
-          <h1>归档</h1>
+          <h1>分类</h1>
         </div>
       </div>
     </header>
 
     <main class="main-wrap">
-      <section class="board archive-board" id="board" aria-labelledby="archive-title">
-        <p class="archive-count" id="archive-title">共计 2 篇文章</p>
+      <section class="board taxonomy-board" id="board" aria-labelledby="categories-title">
+        <p class="archive-count" id="categories-title">共计 2 个分类</p>
         <hr>
-        <p class="archive-year">2026</p>
 
-        <a class="archive-item" href="./agents-workflow.html">
-          <time datetime="2026-06-30">06-30</time>
-          <span>Agents-workflow</span>
-        </a>
+        <section class="taxonomy-section" id="ai">
+          <h2>AI <span>1 篇</span></h2>
+          <a class="taxonomy-item" href="./agents-workflow.html">
+            <span>Agents-workflow</span>
+            <small>2026-06-30 · #workflow</small>
+          </a>
+        </section>
 
-        <a class="archive-item" href="./about.html">
-          <time datetime="2026-06-30">06-30</time>
-          <span>About me</span>
-        </a>
+        <section class="taxonomy-section" id="personal">
+          <h2>个人 <span>1 篇</span></h2>
+          <a class="taxonomy-item" href="./about.html">
+            <span>About me</span>
+            <small>2026-06-30 · #self-Introduction</small>
+          </a>
+        </section>
       </section>
     </main>
 

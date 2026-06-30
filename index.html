@@ -12,12 +12,14 @@
   <body class="home-page">
     <div class="progress" aria-hidden="true"><span id="progress-bar"></span></div>
 
-    <header class="hero hero-home" id="top">
+    <header class="hero hero-home hero-index" id="top">
       <nav class="site-nav" aria-label="主导航">
         <a class="brand" href="./index.html">sherlock's blog</a>
         <div class="nav-links">
           <a class="active" href="./index.html">首页</a>
           <a href="./archive.html">归档</a>
+          <a href="./categories.html">分类</a>
+          <a href="./tags.html">标签</a>
           <button class="theme-toggle" type="button" id="theme-toggle" aria-label="切换日夜主题" aria-pressed="false">夜间</button>
         </div>
       </nav>
@@ -35,28 +37,30 @@
       <section class="board" id="board" aria-label="博客内容">
         <article class="index-card">
           <h2>
-          <a href="./agents-workflow.html">Agents-workflow</a>
+            <a href="./agents-workflow.html">Agents-workflow</a>
           </h2>
-          <p class="index-excerpt">
+          <a class="index-excerpt" href="./agents-workflow.html">
             记录 planner、implementation、review 三个 agent 协作完成任务的工作流程。
-          </p>
+          </a>
           <div class="post-metas">
             <span>2026-06-30</span>
-            <span>项目记录</span>
-            <span>#Agents</span>
+            <a href="./categories.html#ai">AI</a>
+            <a href="./tags.html#workflow">#workflow</a>
           </div>
         </article>
 
         <article class="index-card pinned">
-          <h2><span class="pin">pin</span>
-            <a href="./about.html">About me</a></h2>
-          <p class="index-excerpt">
+          <h2>
+            <span class="pin">pin</span>
+            <a href="./about.html">About me</a>
+          </h2>
+          <a class="index-excerpt" href="./about.html">
             这是我的个人博客，我会在闲暇时间记录我的日常学习内容、课程笔记以及一些日常思考。
-          </p>
+          </a>
           <div class="post-metas">
             <span>2026-06-30</span>
-            <span>个人介绍</span>
-            <span>#About</span>
+            <a href="./categories.html#personal">个人</a>
+            <a href="./tags.html#self-introduction">#self-Introduction</a>
           </div>
         </article>
       </section>
