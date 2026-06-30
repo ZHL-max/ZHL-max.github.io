@@ -79,6 +79,7 @@ button {
   min-height: 60vh;
   background: url("./assets/hero-home.jpg") center center / cover no-repeat;
   color: #fff;
+  overflow: hidden;
 }
 
 .hero-index {
@@ -99,6 +100,14 @@ button {
 
 .hero-home {
   min-height: 100vh;
+  min-height: 100svh;
+}
+
+.home-page .hero-index {
+  background-color: #0d171b;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 .hero-mask {
@@ -205,18 +214,31 @@ button {
 .scroll-down {
   position: absolute;
   left: 50%;
-  bottom: 1.8rem;
-  width: 2.4rem;
-  height: 2.4rem;
+  bottom: clamp(1.4rem, 3vw, 2.4rem);
+  width: 3rem;
+  height: 3rem;
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.54);
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.2);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
   color: #fff;
-  font-size: 2.1rem;
+  font-size: 0;
   line-height: 1;
   text-decoration: none;
   transform: translateX(-50%);
-  animation: floatDown 1.8s ease-in-out infinite;
+  animation: floatDown 1.7s ease-in-out infinite;
+}
+
+.scroll-down::before {
+  content: "";
+  width: 0.78rem;
+  height: 0.78rem;
+  border-right: 3px solid currentColor;
+  border-bottom: 3px solid currentColor;
+  transform: rotate(45deg) translate(-0.05rem, -0.05rem);
 }
 
 @keyframes floatDown {
@@ -261,6 +283,10 @@ button {
   border-radius: var(--radius);
   background: var(--board);
   box-shadow: var(--shadow);
+}
+
+.home-page .board {
+  margin-top: clamp(1.8rem, 4vw, 3.2rem);
 }
 
 .index-card {
